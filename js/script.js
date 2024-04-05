@@ -5,31 +5,77 @@
 
 console.log("1/ Implémentez une fonction qui retourne la somme de ses 2 paramètres.");
 
-console.log();
-console.log();
+/**
+ * get sum
+ * @param {number} nbr1 
+ * @param {number} nbr2 
+ * @returns get result
+ */
+
+function sum(nbr1, nbr2) {
+    const result = nbr1 + nbr2;
+    return result;
+}
+
+console.log(sum(2, 3));
+console.log(sum(10, 12));
 
 
 /* ------------------------------------------------------*/
 
 console.log("2/ Implémentez une fonction qui retourne la plus petite des 2 valeurs passées en paramètre.");
 
-console.log();
-console.log();
+/**
+ * get smallest number
+ * @param {number} nbr1 
+ * @param {*number} nbr2 
+ * @returns litle number
+ */
+
+function getLitleNumber(nbr1, nbr2) {
+ return Math.min(nbr1, nbr2)
+}
+
+console.log(getLitleNumber(20,30));
+console.log(getLitleNumber(10, 5));
 
 
 /* ------------------------------------------------------*/
 
 console.log("3/ Implémentez une fonction qui retourne la dernière valeur d'un tableau.");
 
-console.log();
-console.log();
+const array = [
+    1, 
+    2, 
+    3, 
+    4
+]
+
+const newArray = [
+    "truc",
+    "bidule",
+    "machin"
+]
+
+function getLastValue(array) {
+    const lastValue = array[array.length-1];
+    return lastValue;
+}
+
+console.log(getLastValue(array));
+console.log(getLastValue(newArray));
 
 
 /* ------------------------------------------------------*/
 
 console.log("4/ Implémentez une fonction qui retourne la valeur en entrée augmentée d'un pourcentage d'augmentation.");
 
-console.log();
+
+function getRatio(a, b) {
+    return  (1 + b / 100) * a;
+}
+
+console.log(getRatio(50, 10));
 console.log();
 
 
@@ -37,31 +83,99 @@ console.log();
 
 console.log("5/ Implémentez une fonction qui retourne la valeur maximale entre 3 valeurs.");
 
-console.log();
-console.log();
+/**
+ * get max value
+ * @param {number} a 
+ * @param {number} b 
+ * @param {number} c 
+ * @returns max value
+ */
+
+function getMaxValue (a, b, c) {
+   if (a > b && a > c) {
+    return a
+   }
+
+   if (b > a && b > c) {
+    return b
+   }
+   else {
+    return c
+   }
+}
+
+console.log(getMaxValue(1, 2, 3));
+console.log(getMaxValue(6, 5, 4));
 
 
 /* ------------------------------------------------------*/
 
 console.log("6/ Implémentez une fonction qui retourne la somme des valeurs d'un tableau.");
 
-console.log();
+const arrayNbr = [
+    10,
+    20,
+    30
+];
+
+let sumArray = 0;
+
+/**
+ * get sum of values array
+ * @param {array} arrayName 
+ * @returns {number} sum 
+ */
+function getSumArray(arrayName) {
+    for (const number of arrayName) { 
+        sumArray+= number;
+    }
+    return sumArray;
+}
+
+console.log(getSumArray(arrayNbr));
 console.log();
 
 
 /* ------------------------------------------------------*/
 
 console.log("7/ Implémentez une fonction qui retourne une valeur aléatoire entre 0 et un nombre.");
-
-console.log();
-console.log();
+/**
+ * get random number
+ * @param {number} number 
+ * @returns random number
+ */
+function getrandomNumber(number) {
+    const randomNbr = Math.floor(number * Math.random());
+    return randomNbr;
+}
+console.log(getrandomNumber(2));
+console.log(getrandomNumber(2000));
 
 
 /* ------------------------------------------------------*/
 
 console.log("8/ Implémentez une fonction qui retourne la moyenne des valeurs d'un tableau.");
 
-console.log();
+const arrayNbraverange = [
+    10,
+    20,
+    30
+];
+
+let averangeArray =0;
+/**
+ * get averange of array 's value
+ * @param {array} array 
+ * @returns {number}
+ */
+function getAverange (array) {
+    for (const nbr of array) {
+        averangeArray+= nbr ;
+    }
+    return averangeArray / array.length;
+}
+
+console.log(getAverange(arrayNbraverange));
 console.log();
 
 
