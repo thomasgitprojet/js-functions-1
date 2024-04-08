@@ -145,8 +145,7 @@ console.log("7/ Implémentez une fonction qui retourne une valeur aléatoire ent
  * @returns random number
  */
 function getrandomNumber(number) {
-    const randomNbr = Math.floor(number * Math.random());
-    return randomNbr;
+    return Math.floor(Math.random() * (number+1));
 }
 console.log(getrandomNumber(2));
 console.log(getrandomNumber(2000));
@@ -162,18 +161,16 @@ const arrayNbraverange = [
     30
 ];
 
-let averangeArray =0;
+
 /**
  * get averange of array 's value
  * @param {array} array 
  * @returns {number}
  */
-function getAverange (array) {
-    for (const nbr of array) {
-        averangeArray+= nbr ;
-    }
-    return averangeArray / array.length;
+function getAverange(array) {
+    return getSumArray(array) / array.length;
 }
+console.log(getSumArray(arrayNbraverange));
 
 console.log(getAverange(arrayNbraverange));
 console.log();
@@ -183,37 +180,93 @@ console.log();
 
 console.log("9/ Implémentez une fonction qui retourne une durée en heures et minutes depuis une durée en minutes.");
 
-console.log();
-console.log();
+/**
+ * get time
+ * @param {number} minute 
+ * @returns {number}
+ */
+function getMinute (minute) {
+    const convMinute = minute % 60;
+    const convHour = (minute - convMinute) / 60;
+    return (`${convHour} : ${convMinute}`)
+}
+console.log(getMinute(70));
+console.log(getMinute(135));
 
 
 /* ------------------------------------------------------*/
 
 console.log("10/ Implémentez une fonction qui retourne la valeur minimale d'un tableau.");
-
-console.log();
-console.log();
+/**
+ * get smaller value of array
+ * @param {array} array 
+ * @returns {number} 
+ */
+function getMinValueArray(array) {
+    return Math.min(...array)
+}
+console.log(getMinValueArray([2, 87, 5, 69]));
+console.log(getMinValueArray([58, 32, 7, 83]));
 
 
 /* ------------------------------------------------------*/
 
 console.log("11/ Implémentez une fonction qui retourne la clé d'un objet pour la valeur maximale .");
 
-console.log();
-console.log();
+/**
+ * get key of max value in object
+ * @param {object} object 
+ * @returns {string}
+ */
+
+function getKeyOfMaxValue (object) {
+    let valueMax = 0;
+    let value = 0;
+    let keyMax;
+    for (key in object) {
+
+        value = object[key];
+
+        if (value > valueMax) {
+            keyMax = key;
+        }
+    }
+    return keyMax
+    // return valueMax
+}
+console.log(getKeyOfMaxValue({age : 16, taille : 180, melon : 200}));
+
 
 
 /* ------------------------------------------------------*/
 
 console.log("12/ Implémentez une fonction qui retourne une valeur aléatoire dans un tableau.");
 
-console.log();
-console.log();
+/**
+ * get random value of array
+ * @param {array} array 
+ * @returns {value}
+ */
+
+function getRandomValueOfArray (array) {
+  
+    const iRandom = getrandomNumber ((array.length)-1);
+    const randomValue = array[iRandom]
+    
+    return randomValue
+}
+
+console.log(getRandomValueOfArray(["banane", "pomme", "orange"]));
+console.log(getRandomValueOfArray(["Bernardo", "Zorro", "Tornado"]));
 
 
 /* ------------------------------------------------------*/
 
 console.log("13/ Implémentez une fonction qui retourne le nombre de mots dans un texte.");
 
-console.log();
-console.log();
+function getNumberWord (txt) {
+    return nbrWord = txt.split(" ").length
+}
+
+console.log(getNumberWord ("Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, amet veniam officiis rerum reiciendis deleniti repudiandae hic consequuntur at unde quisquam ut ex fugiat facere. Officiis ducimus eius numquam molestiae!"));
+console.log(getNumberWord("exercices terminés"));
